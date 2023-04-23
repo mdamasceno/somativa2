@@ -1,1 +1,18 @@
 dckr_pat_Y21HBvPYp4bXzW7XxAQA1qHBwnU
+
+
+local conectar a conta dockerhub cmd
+baixar imagem
+rodar numa porta
+
+ngrok criar conta
+exe
+login
+ngrok http {n da porta}
+
+
+somativaMDamascenoBot
+
+5994315388:AAHn9DFCNv_X7SswwONs_Z4NuH2wyQmUWek
+
+1628925407
