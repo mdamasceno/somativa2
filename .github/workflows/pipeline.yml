@@ -20,7 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: python3 app.py
+      - name: Install Flask
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install flask
+      - name: Run tests
+        run: python3 app.py
       - uses: AppThreat/sast-scan-action@master
         with:
           type: "python"
@@ -45,5 +50,9 @@ jobs:
           push: true
           tags: mdamasceno/somativa2:latest
 
-      - name: Deploy
-        run: echo "Deploy ok"
+       - name: Notify in Telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: "The build job has completed successfully."
